@@ -11,10 +11,11 @@ const forecast = (latitude, longitude, callback) => {
     } else {
       // const temp = response.body.current.temperature;
       // const rainChance = response.body.current.precip;
-      const { temperature, precip } = body.current;
+      const { temperature, precip, observation_time } = body.current;
+      //console.log(body.current);
       callback(
         undefined,
-        `It is currently ${temperature} degree out. There is a ${precip}% of rain `
+        `It is currently ${temperature} degree at ${observation_time}. There is a ${precip}% of rain `
       );
     }
   });
